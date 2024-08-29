@@ -1,0 +1,5 @@
+TIMESTAMP = 1724958705
+SHA256 (go/sysutils_v2ray-exporter_freebsd_port/wi1dcard-v2ray-exporter-0.6.2-7d35bded_GH0/go.mod) = f2a7e3af09b3c16ed0448ff329bfd90cb058648ea5cfc1d4cae794a450803d19
+SIZE (go/sysutils_v2ray-exporter_freebsd_port/wi1dcard-v2ray-exporter-0.6.2-7d35bded_GH0/go.mod) = 865
+SHA256 (go/sysutils_v2ray-exporter_freebsd_port/wi1dcard-v2ray-exporter-0.6.2-7d35bded_GH0/wi1dcard-v2ray-exporter-0.6.2-7d35bded_GH0.tar.gz) = ad1973bbaf0a6f0c21a23c9db51b107b252d913072ee847acfdcc856572aa862
+SIZE (go/sysutils_v2ray-exporter_freebsd_port/wi1dcard-v2ray-exporter-0.6.2-7d35bded_GH0/wi1dcard-v2ray-exporter-0.6.2-7d35bded_GH0.tar.gz) = 17447

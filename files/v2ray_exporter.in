@@ -1,0 +1,58 @@
+#!/bin/sh
+
+# PROVIDE: v2ray_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# v2ray_exporter_enable (bool):          Set to NO by default.
+#               Set it to YES to enable v2ray_exporter.
+# v2ray_exporter_user (string):          Set user that v2ray_exporter will run under
+#               Default is "nobody".
+# v2ray_exporter_group (string):         Set group that v2ray_exporter will run under
+#               Default is "nobody".
+# v2ray_exporter_args (string):          Set extra arguments to pass to v2ray_exporter
+#               Default is "".
+# v2ray_exporter_listen_address (string):Set ip:port that v2ray_exporter will listen on
+#               Default is ":9100".
+# v2ray_exporter_textfile_dir (string):  Set directory that v2ray_exporter will watch
+#               Default is "/var/tmp/v2ray_exporter".
+
+. /etc/rc.subr
+
+name=v2ray_exporter
+rcvar=v2ray_exporter_enable
+
+load_rc_config $name
+
+: ${v2ray_exporter_enable:="NO"}
+: ${v2ray_exporter_user:="nobody"}
+: ${v2ray_exporter_group:="nobody"}
+: ${v2ray_exporter_args:=""}
+: ${v2ray_exporter_listen_address:=":9550"}
+
+
+pidfile=/var/run/v2ray_exporter.pid
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/v2ray_exporter"
+command_args="-f -p ${pidfile} -T ${name} \
+    /usr/bin/env ${procname} \
+    --listen=${v2ray_exporter_listen_address} \
+    ${v2ray_exporter_args}"
+
+start_precmd=v2ray_exporter_startprecmd
+
+v2ray_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install \
+            -o ${v2ray_exporter_user} \
+            -g ${v2ray_exporter_group} \
+            /dev/null ${pidfile};
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
