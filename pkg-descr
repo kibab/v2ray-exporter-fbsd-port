@@ -1,1 +1,2 @@
-This is a port for v2ray exporter. It exports XRay metrics in Prometheus format.
+This is a port for v2ray exporter.
+It exports XRay metrics in Prometheus format.
