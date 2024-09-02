@@ -4,7 +4,7 @@ DISTVERSION=	0.6.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	kibab@FreeBSD.org
-COMMENT=	V2Ray / XRay exporter for machine metrics
+COMMENT=	V2Ray / XRay Prometheus metrics exporter
 WWW=		https://github.com/wi1dcard/v2ray-exporter
 
 LICENSE=	MIT
