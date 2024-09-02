@@ -23,7 +23,8 @@ GO_MODULE=	github.com/wi1dcard/v2ray-exporter
 GO_BUILDFLAGS=	-v -ldflags "${LD_FLAG_STRING}"
 
 LD_FLAG_STRING=	-s \
-		${LD_FLAG_X_PREFIX}.buildVersion=${PORTVERSION}
+		${LD_FLAG_X_PREFIX}.buildVersion=${PORTVERSION} \
+		${LD_FLAG_X_PREFIX}.buildCommit=${GH_TAGNAME}
 
 LD_FLAG_X_PREFIX=	-X main
 
